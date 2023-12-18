@@ -35,3 +35,12 @@ export const getTrendingMovies = async () => {
         throw e;
     }
 }
+
+export const getMovieDetailById = async (movieId) => {
+    try {
+        const res = await axiosInstance.get(`movie_details.json?movie_id=${movieId}`);
+        return res.data.data.movie; // Update to access the 'movie' property directly
+    } catch (e) {
+        throw e;
+    }
+};

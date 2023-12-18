@@ -1,5 +1,5 @@
 import {useQuery} from "@tanstack/react-query";
-import {get4KMovies, getALlMovies, getRankingMovies, getTrendingMovies} from "../apis/movies";
+import {get4KMovies, getALlMovies, getMovieDetailById, getRankingMovies, getTrendingMovies} from "../apis/movies";
 
 const useGetMoviesList = () =>{
     return useQuery({
@@ -29,12 +29,20 @@ const useGetTrendingMoviesList = () =>{
     })
 }
 
+const useGetMovieById = (movieId) => {
+    return useQuery({
+        queryKey: ['get', 'movie_detail', movieId],
+        queryFn: () => getMovieDetailById(movieId),
+    });
+};
+
 export const useMovies = () =>{
     return {
         useGetMoviesList,
         useGet4KMoviesList,
         useGetRankingMoviesList,
         useGetTrendingMoviesList,
+        useGetMovieById,
     }
 }
 

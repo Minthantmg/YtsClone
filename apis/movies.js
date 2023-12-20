@@ -1,9 +1,9 @@
 import {axiosInstance} from "../utils/axiosInstance";
 
-export const getALlMovies = async () => {
+export const getALlMovies = async (currentPage) => {
     try {
-        const res = await axiosInstance.get('list_movies.json?limit=24')
-        return res.data.data.movies
+        const res = await axiosInstance.get(`list_movies.json?page=${currentPage}&limit=24`)
+        return res.data.data.movies;
     } catch (e) {
         throw e;
     }

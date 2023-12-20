@@ -1,10 +1,11 @@
 import {useQuery} from "@tanstack/react-query";
 import {get4KMovies, getALlMovies, getMovieDetailById, getRankingMovies, getTrendingMovies} from "../apis/movies";
 
-const useGetMoviesList = () =>{
+const useGetMoviesList = (currentPage) =>{
     return useQuery({
-        queryKey:['get','list_movies'],
-        queryFn: getALlMovies
+        queryKey:['get','list_movies',currentPage],
+        queryFn: () => getALlMovies(currentPage),
+        keepPreviousData: true,
     })
 }
 

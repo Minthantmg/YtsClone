@@ -1,15 +1,18 @@
 'use client'
-import React from 'react';
+import React, {useState} from 'react';
 import Nav from "@/app/nav";
 import Footer from "@/app/footer";
 import {useMovies} from "../../../hooks/useMovies";
 import Image from "next/image";
 import star from "../../../public/yellowStar.svg";
 import Link from "next/link";
+import Pagination from "@/app/pagination";
 
 const Page = () => {
+    const [currentPage, setCurrentPage] = useState(1);
     const {useGet4KMoviesList} = useMovies()
-    const {data: movies, isLoading, isError, isSuccess} = useGet4KMoviesList()
+    const {data: movies, isLoading, isError, isSuccess} = useGet4KMoviesList(currentPage)
+    const totalPages = 999999;
     return (
         <div>
             {isLoading && (
@@ -24,7 +27,7 @@ const Page = () => {
                         <div className="w-full max-w-7xl">
                             <div className="border-b">
                                 <div className="hidden sm:block text-center font-sans text-lg mt-4 ml-36 mr-36 mb-4">
-                                    2160p 4K YIFY Movies (ordered by latest)
+                                    2160p 4K YIFY Movies
                                 </div>
                             </div>
                             <div className="flex flex-wrap relative">
@@ -75,6 +78,10 @@ const Page = () => {
                                 ))}
                             </div>
                         </div>
+                    </div>
+                    <div className="ml-10 sm:ml-0">
+                        <Pagination currentPage={currentPage} totalPages={totalPages}
+                                    setCurrentPage={setCurrentPage}/>
                     </div>
                     <Footer/>
                 </>

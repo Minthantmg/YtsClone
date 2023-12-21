@@ -1,15 +1,18 @@
 'use client'
-import React from 'react';
+import React, {useState} from 'react';
 import Nav from "@/app/nav";
 import Footer from "@/app/footer";
 import {useMovies} from "../../../hooks/useMovies";
 import Image from "next/image";
 import star from "../../../public/yellowStar.svg";
 import Link from "next/link";
+import Pagination from "@/app/pagination";
 
 const Page = () => {
+    const [currentPage, setCurrentPage] = useState(1);
     const {useGetTrendingMoviesList} = useMovies()
-    const {data: movies, isLoading, isError, isSuccess} = useGetTrendingMoviesList()
+    const {data: movies, isLoading, isError, isSuccess} = useGetTrendingMoviesList(currentPage)
+    const totalPages = 999999;
     return (
         <div>
             {isLoading && (
@@ -75,6 +78,10 @@ const Page = () => {
                                 ))}
                             </div>
                         </div>
+                    </div>
+                    <div className="ml-10 sm:ml-0">
+                        <Pagination currentPage={currentPage} totalPages={totalPages}
+                                    setCurrentPage={setCurrentPage}/>
                     </div>
                     <Footer/>
                 </>

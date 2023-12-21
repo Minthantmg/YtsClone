@@ -9,27 +9,27 @@ export const getALlMovies = async (currentPage) => {
     }
 }
 
-export const get4KMovies = async () => {
+export const get4KMovies = async (currentPage4k) => {
     try {
-        const res = await axiosInstance.get('list_movies.json?quality=4k&limit=24')
+        const res = await axiosInstance.get(`list_movies.json?quality=4k&page=${currentPage4k}&limit=24`)
         return res.data.data.movies
     } catch (e) {
         throw e;
     }
 }
 
-export const getRankingMovies = async () => {
+export const getRankingMovies = async (currentPageRanking) => {
     try {
-        const res = await axiosInstance.get('list_movies.json?sort_by=rating&limit=24')
+        const res = await axiosInstance.get(`list_movies.json?sort_by=rating&page=${currentPageRanking}&limit=24`)
         return res.data.data.movies
     } catch (e) {
         throw e;
     }
 }
 
-export const getTrendingMovies = async () => {
+export const getTrendingMovies = async (currentPageTrending) => {
     try {
-        const res = await axiosInstance.get('list_movies.json?sort_by=download_count&limit=24')
+        const res = await axiosInstance.get(`list_movies.json?sort_by=download_count&page=${currentPageTrending}&limit=24`)
         return res.data.data.movies
     } catch (e) {
         throw e;

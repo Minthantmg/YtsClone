@@ -17,8 +17,6 @@ const Page = () => {
     } = useGetMoviesList(currentPage)
     const totalPages = 999999;
 
-    console.log('Current Page:', totalPages);
-
     return (
         <div>
             {isLoading && (

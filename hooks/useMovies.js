@@ -9,24 +9,24 @@ const useGetMoviesList = (currentPage) =>{
     })
 }
 
-const useGet4KMoviesList = () =>{
+const useGet4KMoviesList = (currentPage4k) =>{
     return useQuery({
-        queryKey:['get','4k_list_movies'],
-        queryFn: get4KMovies
+        queryKey:['get','4k_list_movies',currentPage4k],
+        queryFn: () => get4KMovies(currentPage4k),
     })
 }
 
-const useGetRankingMoviesList = () =>{
+const useGetRankingMoviesList = (currentPageRanking) =>{
     return useQuery({
-        queryKey:['get','ranking_list_movies'],
-        queryFn: getRankingMovies
+        queryKey:['get','ranking_list_movies',currentPageRanking],
+        queryFn: () => getRankingMovies(currentPageRanking),
     })
 }
 
-const useGetTrendingMoviesList = () =>{
+const useGetTrendingMoviesList = (currentPageTrending) =>{
     return useQuery({
-        queryKey:['get','trending_list_movies'],
-        queryFn: getTrendingMovies
+        queryKey:['get','trending_list_movies',currentPageTrending],
+        queryFn: () => getTrendingMovies(currentPageTrending),
     })
 }
 

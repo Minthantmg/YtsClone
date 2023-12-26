@@ -51,10 +51,11 @@ const useGetSimilarMovies = (similarMoviesId) => {
     });
 };
 
-const useGetSearchText = (searchText) => {
+const useGetSearchText = (searchText,isEnable) => {
     return useQuery({
         queryKey: ['get', 'searchText', searchText],
         queryFn: () => getMovieSearchText(searchText),
+        enabled : isEnable
     });
 };
 

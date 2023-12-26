@@ -27,13 +27,13 @@ const Page = () => {
             {isSuccess && (
                 <>
                     <Nav/>
-                    <div className="flex justify-center w-full h-full">
+                    <div className="flex justify-center w-full h-full bg-black">
                         <div className="w-full max-w-7xl">
                             <div className="border-b">
-                                <div className="hidden sm:block text-center font-bold text-4xl mt-8">
+                                <div className="hidden sm:block text-center font-bold text-4xl mt-8 text-white">
                                     Download YIFY movies: HD smallest size
                                 </div>
-                                <div className="hidden sm:block text-center font-sans text-lg mt-2 ml-36 mr-36 mb-10">
+                                <div className="hidden sm:block text-center font-sans text-lg mt-2 ml-36 mr-36 mb-10 text-white">
                                     Welcome to the official YTS.MX website. Here you can browse and download YIFY movies
                                     in
                                     excellent 720p, 1080p, 2160p 4K and 3D quality, all at the smallest file size. YTS
@@ -47,7 +47,7 @@ const Page = () => {
                                         <Link legacyBehavior={true} href={`/detail/${movie.id}`}>
                                             <a>
                                                 <div
-                                                    className="relative group shadow-lg rounded-lg border-4 border-black hover:border-green-400 ml-2 mt-2 mr-2 w-fit">
+                                                    className="relative group shadow-lg rounded-lg border-4 border-white hover:border-green-400 ml-2 mt-2 mr-2 w-fit">
                                                     {/* eslint-disable-next-line @next/next/no-img-element */}
                                                     <img
                                                         src={movie.medium_cover_image}
@@ -77,7 +77,7 @@ const Page = () => {
                                                         </div>
                                                     </div>
                                                 </div>
-                                                <div className="ml-3 text-xs mt-2 font-bold">
+                                                <div className="ml-3 text-xs mt-2 font-bold text-white">
                                                     <div>{movie.title}</div>
                                                 </div>
                                                 <div className="ml-3 text-xs font-bold text-gray-300">
@@ -90,7 +90,7 @@ const Page = () => {
                             </div>
                         </div>
                     </div>
-                    <div className="ml-10 sm:ml-0">
+                    <div className="ml-10 sm:ml-0 bg-black">
                         <Pagination currentPage={currentPage} totalPages={totalPages}
                                     setCurrentPage={setCurrentPage}/>
                     </div>

@@ -27,13 +27,13 @@ const Pagination = ({currentPage, totalPages, setCurrentPage}) => {
     };
 
     return (
-        <div className="flex justify-center items-center h-full ml-3 mr-3 md:ml-16 lg:ml-36 xl:ml-64">
+        <div className="flex justify-center items-center h-full ml-3 mr-3 md:ml-16 lg:ml-36 xl:ml-64 bg-black">
             <div className="flex justify-center items-center mt-4 mb-4 sm:-ml-60">
                 <nav className="relative z-0 inline-flex shadow-sm -space-x-px" aria-label="Pagination">
                     <a
                         className={`relative inline-flex items-center px-2 py-2 rounded-l-md border ${
                             currentPage === 1
-                                ? ''
+                                ? 'bg-white'
                                 : 'border-gray-300 bg-white text-gray-500 hover:bg-gray-50'
                         } text-sm font-medium focus:z-10 focus:outline-none focus:ring-1 focus:ring-indigo-500 focus:border-indigo-500`}
                         onClick={handleNextPageChange}

@@ -1,5 +1,12 @@
 import {useQuery} from "@tanstack/react-query";
-import {get4KMovies, getALlMovies, getMovieDetailById, getRankingMovies, getTrendingMovies} from "../apis/movies";
+import {
+    get4KMovies,
+    getALlMovies,
+    getMovieDetailById, getMovieSearchText,
+    getRankingMovies,
+    getSimilarMovies,
+    getTrendingMovies
+} from "../apis/movies";
 
 const useGetMoviesList = (currentPage) =>{
     return useQuery({
@@ -37,6 +44,20 @@ const useGetMovieById = (movieId) => {
     });
 };
 
+const useGetSimilarMovies = (similarMoviesId) => {
+    return useQuery({
+        queryKey: ['get', 'similarMovies', similarMoviesId],
+        queryFn: () => getSimilarMovies(similarMoviesId),
+    });
+};
+
+const useGetSearchText = (searchText) => {
+    return useQuery({
+        queryKey: ['get', 'searchText', searchText],
+        queryFn: () => getMovieSearchText(searchText),
+    });
+};
+
 export const useMovies = () =>{
     return {
         useGetMoviesList,
@@ -44,6 +65,8 @@ export const useMovies = () =>{
         useGetRankingMoviesList,
         useGetTrendingMoviesList,
         useGetMovieById,
+        useGetSimilarMovies,
+        useGetSearchText,
     }
 }
 

@@ -44,3 +44,21 @@ export const getMovieDetailById = async (movieId) => {
         throw e;
     }
 };
+
+export const getSimilarMovies = async (similarMovieId) => {
+    try {
+        const res = await axiosInstance.get(`movie_suggestions.json?movie_id=${similarMovieId}`);
+        return res.data.data.movies; // Update to access the 'movie' property directly
+    } catch (e) {
+        throw e;
+    }
+};
+
+export const getMovieSearchText = async (searchText) => {
+    try {
+        const res = await axiosInstance.get(`list_movies.json?limit=4&query_term=${searchText}`);
+        return res.data.data.movie; // Update to access the 'movie' property directly
+    } catch (e) {
+        throw e;
+    }
+};

@@ -12,7 +12,6 @@ import {useQuery} from "@tanstack/react-query";
 
 const Nav = () => {
     const router = useRouter();
-    const [display, setDisplay] = useState(false);
 
     useEffect(() => {
         router.prefetch('/4k')
@@ -21,10 +20,13 @@ const Nav = () => {
         router.prefetch('/home')
     }, []);
     return (
-        <div className="">
+        <div className="bg-black">
             <div className="flex justify-between border-b">
                 <Image src={Yts} alt="" className="w-24 h-10 mt-2 sm:ml-20 ml-2 mb-2 cursor-pointer"
                        onClick={() => router.push('/home')}/>
+                <div className="text-gray-400 mt-3 -ml-96 text-lg">
+                    HD movies at the smallest file size.
+                </div>
                 <div className="flex justify-center items-center sm:mr-16 ">
                     <div className="sm:hidden">
                         <Image src={search} alt="" className="w-8 h-8"/>
@@ -36,19 +38,19 @@ const Nav = () => {
                     <div className="sm:hidden">
                         <Image src={fourK} alt="" className="w-8 h-8 ml-2" onClick={() => router.push('/4k')}/>
                     </div>
-                    <div className="hidden sm:block mr-4 cursor-pointer" onClick={() => router.push('/4k')}>
+                    <div className="hidden sm:block mr-4 cursor-pointer text-gray-400" onClick={() => router.push('/4k')}>
                         4k
                     </div>
                     <div className="sm:hidden">
                         <Image src={ranking} alt="" className="w-8 h-8 ml-2" onClick={() => router.push('/ranking')}/>
                     </div>
-                    <div className="hidden sm:block mr-4 cursor-pointer" onClick={() => router.push('/ranking')}>
+                    <div className="hidden sm:block mr-4 cursor-pointer text-gray-400" onClick={() => router.push('/ranking')}>
                         Ranking
                     </div>
                     <div className="sm:hidden">
                         <Image src={trend} alt="" className="w-8 h-8 ml-2 mr-2" onClick={() => router.push('/trend')}/>
                     </div>
-                    <div className="hidden sm:block cursor-pointer mr-4" onClick={() => router.push('/trend')}>
+                    <div className="hidden sm:block cursor-pointer mr-4 text-gray-400" onClick={() => router.push('/trend')}>
                         Trending
                     </div>
                 </div>

@@ -1,8 +1,8 @@
 import React, {useEffect, useState} from 'react';
 import Yts from '../../../public/yts.png';
 import search from '../../../public/search.svg';
-import fourK from '../../../public/4k.png';
-import ranking from '../../../public/ranking.png';
+import fourK from '../../../public/4k.svg';
+import ranking from '../../../public/ranking.svg';
 import trend from '../../../public/trend.svg';
 import Image from "next/image";
 import {useRouter} from 'next/navigation';
@@ -44,7 +44,7 @@ const Nav = () => {
             <div className="flex justify-between border-b">
                 <Image src={Yts} alt="" className="w-24 h-10 mt-2 sm:ml-20 ml-2 mb-2 cursor-pointer"
                        onClick={() => router.push('/home')}/>
-                <div className="text-gray-400 mt-3 -ml-96 text-lg">
+                <div className="hidden sm:block text-gray-400 mt-3 -ml-96 text-lg">
                     HD movies at the smallest file size.
                 </div>
                 <div className="flex justify-center items-center sm:mr-16 ">
@@ -94,7 +94,7 @@ const Nav = () => {
                         4k
                     </div>
                     <div className="sm:hidden">
-                        <Image src={ranking} alt="" className="w-8 h-8 ml-2" onClick={() => router.push('/ranking')}/>
+                        <Image src={ranking} alt="" className="w-6 h-6 ml-2" onClick={() => router.push('/ranking')}/>
                     </div>
                     <div className="hidden sm:block mr-4 cursor-pointer text-gray-400" onClick={() => router.push('/ranking')}>
                         Ranking

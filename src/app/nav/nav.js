@@ -1,15 +1,15 @@
 import React, {useEffect, useState} from 'react';
-import Yts from '../../public/yts.png';
-import search from '../../public/search.svg';
-import fourK from '../../public/4k.png';
-import ranking from '../../public/ranking.png';
-import trend from '../../public/trend.svg';
+import Yts from '../../../public/yts.png';
+import search from '../../../public/search.svg';
+import fourK from '../../../public/4k.png';
+import ranking from '../../../public/ranking.png';
+import trend from '../../../public/trend.svg';
 import Image from "next/image";
 import {useRouter} from 'next/navigation';
 import Link from "next/link";
 import axios from "axios";
 import {useQuery} from "@tanstack/react-query";
-import {useMovies} from "../../hooks/useMovies";
+import {useMovies} from "../../../hooks/useMovies";
 
 const Nav = () => {
     const router = useRouter();

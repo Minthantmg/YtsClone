@@ -1,5 +1,5 @@
-import previous from '../../public/previous.svg'
-import arrow from '../../public/pvArrow.svg'
+import previous from '../../../public/previous.svg'
+import arrow from '../../../public/pvArrow.svg'
 import React from 'react';
 import Image from 'next/image';
 

@@ -1,12 +1,13 @@
 'use client'
 import React, {useState} from 'react';
-import Nav from "@/app/nav";
-import Footer from "@/app/footer";
+import Nav from "@/app/nav/nav";
+import Footer from "@/app/footer/footer";
 import {useMovies} from "../../../hooks/useMovies";
 import star from "../../../public/yellowStar.svg";
 import Image from 'next/image';
 import Link from "next/link";
-import Pagination from "@/app/pagination";
+import Pagination from "@/app/pagination/pagination";
+import Loading from "@/app/loading/loading";
 
 const Page = () => {
     const [currentPage, setCurrentPage] = useState(1);
@@ -21,7 +22,7 @@ const Page = () => {
         <div>
             {isLoading && (
                 <div>
-                    Loading ...
+                    <Loading />
                 </div>
             )}
             {isSuccess && (

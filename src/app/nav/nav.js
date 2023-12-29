@@ -7,8 +7,6 @@ import trend from '../../../public/trend.svg';
 import Image from "next/image";
 import {useRouter} from 'next/navigation';
 import Link from "next/link";
-import axios from "axios";
-import {useQuery} from "@tanstack/react-query";
 import {useMovies} from "../../../hooks/useMovies";
 
 const Nav = () => {
@@ -108,7 +106,7 @@ const Nav = () => {
                 </div>
             </div>
             <div>
-                <div className={`flex justify-center items-center mt-2 ${display ? 'block' : 'hidden'}`}>
+                <div className={`flex justify-center items-center mt-2 pb-2 ${display ? 'block' : 'hidden'}`}>
                     <div className="ml-4">
                         <input type="search" className="border w-56 px-3" value={searchText}
                                onChange={handleInputChange}

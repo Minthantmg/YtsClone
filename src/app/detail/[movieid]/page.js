@@ -1,6 +1,6 @@
 'use client'
 import React, {useState} from 'react';
-import {useParams} from "next/navigation";
+import {useParams, useRouter} from "next/navigation";
 import {useMovies} from "../../../../hooks/useMovies";
 import Link from "next/link";
 import heart from "../../../../public/heart.svg";
@@ -37,6 +37,7 @@ const SimilarMovieCard = ({similarMovie}) => {
 const Page = () => {
     const {movieid} = useParams();
     const [selectedTorrentIndex, setSelectedTorrentIndex] = useState(0);
+    const router = useRouter();
 
     const {useGetMovieById} = useMovies();
     const {data: movie, isLoading, isError, isSuccess} = useGetMovieById(movieid);
@@ -49,6 +50,11 @@ const Page = () => {
     const handleTorrentClick = (index) => {
         setSelectedTorrentIndex(index);
     };
+
+    const redirectToIMDB = (imdbCode) =>{
+        const imdbUrl = `https://www.imdb.com/title/${imdbCode}/`;
+        router.push(imdbUrl)
+    }
 
     return (
         <div>
@@ -103,8 +109,8 @@ const Page = () => {
                                         ratings
                                     </div>
                                     <div className="flex mt-2">
-                                        <div className="ml-3 w-10 h-10">
-                                            <Image src={imdb} alt=""/>
+                                        <div className="ml-3 w-10 h-10 cursor-pointer">
+                                            <Image src={imdb} alt="" onClick={() => redirectToIMDB(movie.imdb_code)}/>
                                         </div>
                                         <div className="ml-9 text-white">
                                             {movie.rating} <span className="text-sm text-gray-200">/10</span>

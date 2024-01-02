@@ -67,7 +67,7 @@ const Page = () => {
                                                         </div>
                                                     </div>
                                                 </div>
-                                                <div className="ml-3 text-xs mt-2 font-bold">
+                                                <div className="ml-3 text-xs mt-2 font-bold text-white">
                                                     <div>{movie.title}</div>
                                                 </div>
                                                 <div className="ml-3 text-xs font-bold text-gray-300">
@@ -80,7 +80,7 @@ const Page = () => {
                             </div>
                         </div>
                     </div>
-                    <div className="ml-10 sm:ml-0 bg-black">
+                    <div className="bg-black">
                         <Pagination currentPage={currentPage} totalPages={totalPages}
                                     setCurrentPage={setCurrentPage}/>
                     </div>

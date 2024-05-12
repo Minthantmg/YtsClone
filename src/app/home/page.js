@@ -28,7 +28,7 @@ const Page = () => {
             {isSuccess && (
                 <>
                     <Nav/>
-                    <div className="flex justify-center w-full h-full bg-black">
+                    <div className="flex justify-center w-full min-h-screen bg-black">
                         <div className="w-full max-w-7xl">
                             <div className="border-b">
                                 <div className="hidden sm:block text-center font-bold text-4xl mt-8 text-white">

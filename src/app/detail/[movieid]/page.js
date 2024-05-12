@@ -63,7 +63,7 @@ const Page = () => {
             {isSuccess && (
                 <div>
                     <Nav/>
-                    <div className="flex justify-center w-full h-full bg-black">
+                    <div className="flex justify-center w-full min-h-screen bg-black">
                         <div className="w-full max-w-7xl">
                             <div className="mt-4 ml-3 sm:hidden">
                                 <div className="font-bold text-xl font-sans text-white">

@@ -45,7 +45,7 @@ const Nav = () => {
                 <div className="hidden sm:block text-gray-400 mt-3 -ml-96 text-lg">
                     HD movies at the smallest file size.
                 </div>
-                <div className="flex justify-center items-center sm:mr-16 ">
+                <div className="flex justify-center items-center sm:mr-16 gap-1">
                     <div className="sm:hidden">
                         <Image src={search} alt="" className="w-8 h-8" onClick={toggleHandleClick}/>
                     </div>

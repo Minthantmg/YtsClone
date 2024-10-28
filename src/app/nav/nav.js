@@ -40,10 +40,12 @@ const Nav = () => {
     return (
         <div className="bg-black">
             <div className="flex justify-between border-b">
-                <Image src={Yts} alt="" className="w-24 h-10 mt-2 sm:ml-20 ml-2 mb-2 cursor-pointer"
-                       onClick={() => router.push('/home')}/>
-                <div className="hidden sm:block text-gray-400 mt-3 -ml-96 text-lg">
-                    HD movies at the smallest file size.
+                <div className='flex'>
+                    <Image src={Yts} alt="" className="w-24 h-10 mt-2 sm:ml-20 ml-2 mb-2 cursor-pointer"
+                           onClick={() => router.push('/home')}/>
+                    <div className="hidden sm:block text-gray-400 mt-3 md:ml-4 text-lg">
+                        HD movies at the smallest file size.
+                    </div>
                 </div>
                 <div className="flex justify-center items-center sm:mr-16 gap-1">
                     <div className="sm:hidden">
